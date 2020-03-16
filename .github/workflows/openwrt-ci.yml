@@ -81,3 +81,9 @@ jobs:
         with:
           name: OpenWrt firmware
           path: ./bin/targets/
+
+      - name: 同步最新的源码
+        run: |
+          git remote add openwrt https://github.com/coolsnowwolf/lede.git
+          git pull openwrt master
+          git remote -v
